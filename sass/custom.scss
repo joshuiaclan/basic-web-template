@@ -7,8 +7,11 @@ body {
 }
 
 #hero {
-    background: $background-color;
+    background: url($background-url);
+    background-size: cover;
+    background-attachment: fixed;
     height: 100vh;
+
     .nav-bar {
         background: $primary;
         
@@ -41,6 +44,7 @@ body {
         position: relative;
         top: 45vh;
         text-align: center;
+
         h1 {
             margin: 0px;
             text-transform: uppercase;
@@ -51,6 +55,7 @@ body {
             border: solid 2px;
             padding: 5px 20px;
             color: #fff;
+
             &:hover {
                 @include globalTransition;
                 background: white;
@@ -64,4 +69,26 @@ body {
 #content {
     height: $content-height;
     background: $background-color;
+    text-align: center;
+    padding: 0px 80px;
+    color: text-color($background-color);
+
+    .content-header {
+        padding: 50px 0px 50px 0px;
+        margin: 0px;
+        font-size: 2rem;
+    }
+    .content-grid {
+        margin: 0px;
+        display: grid;
+        grid-template-columns: repeat($cols, 1fr);
+        grid-template-rows: 350px;
+        grid-gap: 25px;
+
+        .content-grid-col {
+            border: solid 1px;
+            border-radius: 5px;
+            padding: 15px;
+        }
+    }
 }
