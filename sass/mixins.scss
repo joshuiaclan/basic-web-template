@@ -1,3 +1,7 @@
 @mixin globalTransition {
     transition: .7s;
 }
+
+@mixin  iconTransition {
+    transition: .4s;
+}

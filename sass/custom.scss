@@ -1,4 +1,5 @@
 @import 'functions.scss', 'variables.scss', 'mixins.scss';
+@import '../assets/fontawesome-free/scss/fontawesome.scss';
 
 body {
     font-family: 'Lato', 'Roboto', 'Open Sans';
@@ -14,12 +15,12 @@ body {
 
     .nav-bar {
         background: $primary;
-        
         width: 100%;
         height: 20px;
         padding: 25px 0px 25px 0px;
         position: fixed;
         z-index: 5;
+
         .nav-bar--menu {
             margin: 0px;
             padding: 0px;
@@ -50,6 +51,7 @@ body {
             text-transform: uppercase;
             font-size: 3rem;
         }
+
         .hero-btn {
             text-decoration: none;
             border: solid 2px;
@@ -78,6 +80,7 @@ body {
         margin: 0px;
         font-size: 2rem;
     }
+
     .content-grid {
         margin: 0px;
         display: grid;
@@ -86,9 +89,32 @@ body {
         grid-gap: 25px;
 
         .content-grid-col {
-            border: solid 1px;
-            border-radius: 5px;
-            padding: 15px;
+            color: black;
+            border-radius: 8px;
+            padding: 55px 15px;
+            background: white;
+            i {
+                font-size: 5rem;
+            }
+            &:hover{
+                @include globalTransition;
+                box-shadow: 2px 15px 25px 10px #131313;
+                i {
+                    @include iconTransition;
+                    font-size: 5.5em;
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 800px){
+    #content {
+        height: 900px;
+        .content-grid {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 350px 350px;
         }
     }
 }
